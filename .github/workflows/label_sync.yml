@@ -8,7 +8,7 @@ on:
 
 jobs:
   configure-labels:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@1.0.0
       - uses: micnncim/action-lable-sync@v0.4.0
