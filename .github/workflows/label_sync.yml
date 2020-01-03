@@ -1,0 +1,19 @@
+name: Sync lables
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.labels/**'
+
+jobs:
+  configure-labels:
+    runs-on: unbuntu-latest
+    steps:
+      - uses: actions/checkout@1.0.0
+      - uses: micnncim/action-lable-sync@v0.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          manifest: .labels/labels.yml
+
